@@ -88,7 +88,7 @@ const slogans = ['Fresh, Savory, Authentic', 'From Japan to Campus'];
 
 function App() {
   const [total, setTotal] = useState(0);
-  const [itemCounts, setItemCounts] = useState([]);
+  const [itemCounts, setItemCounts] = useState(new Map());
 
   return (
     <div>
@@ -96,10 +96,16 @@ function App() {
       <div className="menu">
         {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
         { menuItems.map((id) => (
-          <MenuItem id={id} />
+          <MenuItem 
+            menuItem={menuItems}
+            id={id}
+            itemCounts={itemCounts}
+            setItemCounts={setItemCounts}
+            setTotal={setTotal}
+          />
         ))}
       </div>
-      <OrderActions subtotal={total}/>
+      <OrderActions subtotal={total} setTotal={setTotal} setItemCounts={setItemCounts}/>
     </div>
   );
 }

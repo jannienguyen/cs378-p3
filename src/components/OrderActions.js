@@ -4,7 +4,7 @@ const OrderActions = ({ subtotal }) => {
     return (
       <div class="row orderActionRow">
         <div class="col">
-          <p class="itemName">Subtotal ${subtotal}</p>
+          <p class="itemName">Subtotal ${subtotal.toFixed(2)}</p>
         </div>
         <div class="col orderActionButtonCol">
           <button class="orderActionButton">Order</button>
