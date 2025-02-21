@@ -97,7 +97,6 @@ function App() {
         {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
         { menuItems.map((id) => (
           <MenuItem 
-            menuItem={menuItems}
             id={id}
             itemCounts={itemCounts}
             setItemCounts={setItemCounts}
@@ -105,7 +104,12 @@ function App() {
           />
         ))}
       </div>
-      <OrderActions subtotal={total} setTotal={setTotal} setItemCounts={setItemCounts}/>
+      <OrderActions 
+        subtotal={total}
+        setTotal={setTotal}
+        itemCounts={itemCounts}
+        setItemCounts={setItemCounts}
+      />
     </div>
   );
 }
