@@ -1,6 +1,7 @@
 import './App.css';
 import MenuItem from './components/MenuItem';
 import MenuHeader from './components/MenuHeader';
+import OrderActions from './components/OrderActions'
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
@@ -86,6 +87,8 @@ const logoImgName = 'j_bites_logo.png';
 const slogans = ['Fresh, Savory, Authentic', 'From Japan to Campus'];
 
 function App() {
+  const [total, setTotal] = useState(0);
+  const [itemCounts, setItemCounts] = useState([]);
 
   return (
     <div>
@@ -96,6 +99,7 @@ function App() {
           <MenuItem id={id} />
         ))}
       </div>
+      <OrderActions subtotal={total}/>
     </div>
   );
 }

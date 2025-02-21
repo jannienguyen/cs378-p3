@@ -19,7 +19,9 @@ const MenuItem = ({ id }) => {
                         <p class="price">${id.price}</p>
                     </div>
                     <div class="col addItemButtonCol">
-                        <button class="addItemButton">Add</button>
+                        <button class="itemCountButton">-</button>
+                        <p>0</p>
+                        <button class="itemCountButton">+</button>
                     </div>
                 </div>
             </div>
