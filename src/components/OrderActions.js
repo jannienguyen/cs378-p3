@@ -1,6 +1,11 @@
 import React from 'react';
 
-const OrderActions = ({ subtotal }) => {
+const OrderActions = ({ subtotal, setTotal, setItemCounts }) => {
+    const clearOrder =  () => {
+      setTotal(0);
+      setItemCounts(new Map());
+    };
+
     return (
       <div class="row orderActionRow">
         <div class="col">
@@ -8,7 +13,7 @@ const OrderActions = ({ subtotal }) => {
         </div>
         <div class="col orderActionButtonCol">
           <button class="orderActionButton">Order</button>
-          <button class="orderActionButton">Clear all</button>
+          <button class="orderActionButton" onClick={clearOrder}>Clear all</button>
         </div>
       </div>
     );
